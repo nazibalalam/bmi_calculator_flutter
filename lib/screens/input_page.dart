@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_18/components/bottom_button.dart';
+import 'package:flutter_application_18/components/icon_content.dart';
+import 'package:flutter_application_18/components/reusable_card.dart';
+import 'package:flutter_application_18/components/round_icon_button.dart';
+import 'package:flutter_application_18/screens/results_page.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:bmi_calculator_flutter/components/icon_content.dart';
-import 'package:bmi_calculator_flutter/components/reusable_card.dart';
-import 'package:bmi_calculator_flutter/constants.dart';
-import 'package:bmi_calculator_flutter/screens/results_page.dart';
-import 'package:bmi_calculator_flutter/components/bottom_button.dart';
-import 'package:bmi_calculator_flutter/components/round_icon_button.dart';
-import 'package:bmi_calculator_flutter/calculator_brain.dart';
+
+import '../calculator_brain.dart';
+import '../constants.dart';
 
 enum Gender {
   male,
@@ -34,48 +35,45 @@ class _InputPageState extends State<InputPage> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Expanded(
-            child: Row(
-              children: <Widget>[
-                Expanded(
-                  child: ReusableCard(
-                    onPress: () {
-                      setState(
-                        () {
-                          selectedGender = Gender.male;
-                        },
-                      );
-                    },
-                    colour: selectedGender == Gender.male
-                        ? kActiveCardColour
-                        : kInactiveCardColour,
-                    cardChild: IconContent(
-                      icon: FontAwesomeIcons.mars,
-                      label: 'MALE',
-                    ),
+              child: Row(
+            children: <Widget>[
+              Expanded(
+                child: ReusableCard(
+                  onPress: () {
+                    setState(() {
+                      selectedGender = Gender.male;
+                    });
+                  },
+                  colour: selectedGender == Gender.male
+                      ? kActiveCardColour
+                      : kInactiveCardColour,
+                  cardChild: IconContent(
+                    icon: FontAwesomeIcons.mars,
+                    label: 'MALE',
                   ),
                 ),
-                Expanded(
-                  child: ReusableCard(
-                    onPress: () {
-                      setState(() {
-                        selectedGender = Gender.female;
-                      });
-                    },
-                    colour: selectedGender == Gender.female
-                        ? kActiveCardColour
-                        : kInactiveCardColour,
-                    cardChild: IconContent(
-                      icon: FontAwesomeIcons.venus,
-                      label: 'FEMALE',
-                    ),
+              ),
+              Expanded(
+                child: ReusableCard(
+                  onPress: () {
+                    setState(() {
+                      selectedGender = Gender.female;
+                    });
+                  },
+                  colour: selectedGender == Gender.female
+                      ? kActiveCardColour
+                      : kInactiveCardColour,
+                  cardChild: IconContent(
+                    icon: FontAwesomeIcons.venus,
+                    label: 'FEMALE',
                   ),
                 ),
-              ],
-            ),
-          ),
+              ),
+            ],
+          )),
           Expanded(
             child: ReusableCard(
-              onPress: () {},
+               onPress: () {},
               colour: kActiveCardColour,
               cardChild: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -130,7 +128,7 @@ class _InputPageState extends State<InputPage> {
               children: <Widget>[
                 Expanded(
                   child: ReusableCard(
-                    onPress: () {},
+                     onPress: () {},
                     colour: kActiveCardColour,
                     cardChild: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
