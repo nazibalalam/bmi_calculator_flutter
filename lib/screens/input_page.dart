@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_18/components/bottom_button.dart';
-import 'package:flutter_application_18/components/icon_content.dart';
-import 'package:flutter_application_18/components/reusable_card.dart';
-import 'package:flutter_application_18/components/round_icon_button.dart';
-import 'package:flutter_application_18/screens/results_page.dart';
+import 'package:bmi_calculator_flutter/components/bottom_button.dart';
+import 'package:bmi_calculator_flutter/components/icon_content.dart';
+import 'package:bmi_calculator_flutter/components/reusable_card.dart';
+import 'package:bmi_calculator_flutter/components/round_icon_button.dart';
+import 'package:bmi_calculator_flutter/screens/results_page.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../calculator_brain.dart';
@@ -35,52 +35,67 @@ class _InputPageState extends State<InputPage> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Expanded(
-              child: Row(
-            children: <Widget>[
-              Expanded(
-                child: ReusableCard(
-                  onPress: () {
-                    setState(() {
-                      selectedGender = Gender.male;
-                    });
-                  },
-                  colour: selectedGender == Gender.male
-                      ? kActiveCardColour
-                      : kInactiveCardColour,
-                  cardChild: IconContent(
-                    icon: FontAwesomeIcons.mars,
-                    label: 'MALE',
+            child: Row(
+              children: <Widget>[
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        selectedGender = Gender.male;
+                      });
+                    },
+                    child: Container(
+                      child: IconContent(
+                        icon: FontAwesomeIcons.venus,
+                        label: 'MALE',
+                      ),
+                      margin: EdgeInsets.all(15.0),
+                      decoration: BoxDecoration(
+                        color: ActiveCardColor,
+                        borderRadius: BorderRadius.circular(10.0),
+                        border: selectedGender == Gender.male
+                            ? Border.all(width: 3.0, color: Colors.amber)
+                            : Border.all(width: 0.0),
+                      ),
+                    ),
                   ),
                 ),
-              ),
-              Expanded(
-                child: ReusableCard(
-                  onPress: () {
-                    setState(() {
-                      selectedGender = Gender.female;
-                    });
-                  },
-                  colour: selectedGender == Gender.female
-                      ? kActiveCardColour
-                      : kInactiveCardColour,
-                  cardChild: IconContent(
-                    icon: FontAwesomeIcons.venus,
-                    label: 'FEMALE',
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        selectedGender = Gender.female;
+                      });
+                    },
+                    child: Container(
+                      child: IconContent(
+                        icon: FontAwesomeIcons.venus,
+                        label: 'FEMALE',
+                      ),
+                      margin: EdgeInsets.all(15.0),
+                      decoration: BoxDecoration(
+                        color: ActiveCardColor,
+                        borderRadius: BorderRadius.circular(10.0),
+                        border: selectedGender == Gender.female
+                            ? Border.all(width: 3.0, color: Colors.amber)
+                            : Border.all(width: 0.0),
+                      ),
+                    ),
                   ),
                 ),
-              ),
-            ],
-          )),
+              ],
+            ),
+          ),
           Expanded(
             child: ReusableCard(
-               onPress: () {},
-              colour: kActiveCardColour,
+              onPress: () {},
+              color: ActiveCardColor,
               cardChild: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text(
                     'HEIGHT',
-                    style: kLabelTextStyle,
+                    style: LabelTextStyle,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -89,11 +104,11 @@ class _InputPageState extends State<InputPage> {
                     children: <Widget>[
                       Text(
                         height.toString(),
-                        style: kNumberTextStyle,
+                        style: NumberTextStyle,
                       ),
                       Text(
                         'cm',
-                        style: kLabelTextStyle,
+                        style: LabelTextStyle,
                       )
                     ],
                   ),
@@ -128,18 +143,18 @@ class _InputPageState extends State<InputPage> {
               children: <Widget>[
                 Expanded(
                   child: ReusableCard(
-                     onPress: () {},
-                    colour: kActiveCardColour,
+                    onPress: () {},
+                    color: ActiveCardColor,
                     cardChild: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Text(
                           'WEIGHT',
-                          style: kLabelTextStyle,
+                          style: LabelTextStyle,
                         ),
                         Text(
                           weight.toString(),
-                          style: kNumberTextStyle,
+                          style: NumberTextStyle,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -171,17 +186,17 @@ class _InputPageState extends State<InputPage> {
                 Expanded(
                   child: ReusableCard(
                     onPress: () {},
-                    colour: kActiveCardColour,
+                    color: ActiveCardColor,
                     cardChild: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Text(
                           'AGE',
-                          style: kLabelTextStyle,
+                          style: LabelTextStyle,
                         ),
                         Text(
                           age.toString(),
-                          style: kNumberTextStyle,
+                          style: NumberTextStyle,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../constants.dart';
 
-
 class BottomButton extends StatelessWidget {
   BottomButton({required this.onTap, required this.buttonTitle});
 
@@ -17,14 +16,14 @@ class BottomButton extends StatelessWidget {
         child: Center(
           child: Text(
             buttonTitle,
-            style: kLargeButtonTextStyle,
+            style: LargeButtonTextStyle,
           ),
         ),
-        color: kBottomContainerColour,
+        color: BottomContainerColor,
         margin: EdgeInsets.only(top: 10.0),
-        padding: EdgeInsets.only(bottom: 20.0),
-        width: double.infinity,
-        height: kBottomContainerHeight,
+        padding: EdgeInsets.only(bottom: 10.0),
+        width: 10,
+        height: BottomContainerHeight,
       ),
     );
   }
