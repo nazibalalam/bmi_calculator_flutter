@@ -30,6 +30,8 @@ class _InputPageState extends State<InputPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('BMI CALCULATOR'),
+        backgroundColor: PrimaryColor,
+        // color: Color(0xFF162819)
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -51,7 +53,7 @@ class _InputPageState extends State<InputPage> {
                       ),
                       margin: EdgeInsets.all(15.0),
                       decoration: BoxDecoration(
-                        color: ActiveCardColor,
+                        color: PrimaryColor,
                         borderRadius: BorderRadius.circular(10.0),
                         border: selectedGender == Gender.male
                             ? Border.all(width: 3.0, color: Colors.amber)
@@ -74,7 +76,7 @@ class _InputPageState extends State<InputPage> {
                       ),
                       margin: EdgeInsets.all(15.0),
                       decoration: BoxDecoration(
-                        color: ActiveCardColor,
+                        color: PrimaryColor,
                         borderRadius: BorderRadius.circular(10.0),
                         border: selectedGender == Gender.female
                             ? Border.all(width: 3.0, color: Colors.amber)
@@ -89,7 +91,7 @@ class _InputPageState extends State<InputPage> {
           Expanded(
             child: ReusableCard(
               onPress: () {},
-              color: ActiveCardColor,
+              color: PrimaryColor,
               cardChild: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -144,7 +146,7 @@ class _InputPageState extends State<InputPage> {
                 Expanded(
                   child: ReusableCard(
                     onPress: () {},
-                    color: ActiveCardColor,
+                    color: PrimaryColor,
                     cardChild: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
@@ -186,7 +188,7 @@ class _InputPageState extends State<InputPage> {
                 Expanded(
                   child: ReusableCard(
                     onPress: () {},
-                    color: ActiveCardColor,
+                    color: PrimaryColor,
                     cardChild: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[

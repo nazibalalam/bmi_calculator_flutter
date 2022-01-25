@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 const BottomContainerHeight = 80.0;
-const InactiveCardColor = Color(0xFF201E50);
-const ActiveCardColor = Color(0xFF162819);
+const PrimaryColor = Color(0xFF162819);
 const BottomContainerColor = Colors.amber;
 
 const LabelTextStyle = TextStyle(
